@@ -1,0 +1,407 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Adjust header for a slimmer layout */
+header {
+    background: #121212;
+    color: #fff;
+    padding: 10px 20px; /* Smaller padding */
+    animation: slideInHeader 0.5s ease-out; /* Animation on load */
+}
+
+/* Navbar container with space between logo and links */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Ensures logo-container on the left and nav-links on the right */
+    align-items: center;
+    padding: 10px 10px; /* Adds some padding for spacing */
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.navbar:hover {
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Logo container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    animation: fadeInLogo 1.2s ease-out; /* Animation on load */
+}
+
+/* Logo size */
+.logo {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: rotate(360deg); /* Spin the logo on hover */
+}
+
+/* Logo text */
+.website-name {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.website-name:hover {
+    color: #f4a261; /* Change color on hover */
+}
+
+/* Navbar links styled */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin-left: auto; /* Pushes the nav links to the right */
+}
+
+.nav-links li {
+    margin: 0 15px; /* Spacing between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for links */
+.nav-links a:hover {
+    color: #f4a261;
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Home section with background */
+.home {
+    background: url('images/home-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 1rem;
+    animation: fadeInHome 2s ease-out; /* Animation on load */
+}
+
+.home-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: slideIn 1s ease-out; /* Animation on load */
+}
+
+.home-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    animation: fadeInText 1.5s ease-out; /* Animation on load */
+}
+
+/* Button with hover animation */
+.btn {
+    display: inline-block;
+    background: #f4a261;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background: #e76f51;
+    transform: scale(1.1); /* Button scale effect on hover */
+}
+
+/* Features section */
+.features {
+    padding: 4rem 1rem;
+    background: #f4f4f4;
+    text-align: center;
+    animation: fadeInSection 2s ease-out; /* Animation on load */
+}
+
+.features h2 {
+    margin-bottom: 2rem;
+    animation: slideIn 1s ease-out; /* Animation on load */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    opacity: 0;
+    animation: fadeInGrid 2s ease-out forwards; /* Animation on load */
+}
+
+.feature {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+}
+
+/* Product section */
+.products {
+    padding: 4rem 1rem;
+    animation: fadeInSection 2s ease-out; /* Animation on load */
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: slideIn 1s ease-out; /* Animation on load */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    opacity: 0;
+    animation: fadeInGrid 2s ease-out forwards; /* Animation on load */
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.product-card img:hover {
+    transform: scale(1.1); /* Image zoom effect on hover */
+}
+
+.product-card h3 {
+    margin: 1rem 0;
+    font-size: 1.25rem;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.add-to-cart {
+    background: #f4a261;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background: #e76f51;
+    transform: scale(1.1); /* Button scale effect on hover */
+}
+
+/* Reviews section */
+.reviews {
+    background: #121212;
+    color: #fff;
+    padding: 4rem 1rem;
+}
+
+.reviews h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: slideIn 1s ease-out; /* Animation on load */
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    opacity: 0;
+    animation: fadeInGrid 2s ease-out forwards; /* Animation on load */
+}
+
+.review {
+    background: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    animation: slideUp 1s ease-out forwards; /* Animation on load */
+}
+
+/* Contact section */
+.contact {
+    padding: 4rem 1rem;
+    background: #f4f4f4;
+    animation: fadeInSection 2s ease-out; /* Animation on load */
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: slideIn 1s ease-out; /* Animation on load */
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form button {
+    background: #f4a261;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background: #e76f51;
+    transform: scale(1.05); /* Button scale effect on hover */
+}
+
+/* Footer */
+footer {
+    background: #121212;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+/* Keyframes for animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInHome {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInGrid {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLogo {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInHeader {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

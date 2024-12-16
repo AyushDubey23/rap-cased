@@ -92,3 +92,9 @@ buttons.forEach(button => {
         addToCart(productName, productPrice);
     });
 });
+const toggleBtn = document.querySelector('.toggle');
+const navLinks = document.querySelector('.nav-links');
+
+toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('toggle');
+});

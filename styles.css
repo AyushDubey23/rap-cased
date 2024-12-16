@@ -405,3 +405,139 @@ footer {
         opacity: 1;
     }
 }
+/* Base styles for desktop */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    padding: 20px;
+    background-color: #333;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Media Query for devices smaller than 768px */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Adjust font size for mobile */
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    /* Stack navigation items vertically */
+    .nav-links {
+        display: block;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Button styling for smaller screens */
+    .btn {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+.container {
+    width: 100%;  /* Allow container to fill screen width */
+    padding: 0 15px; /* Add padding for mobile */
+}
+
+img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto;
+}
+.btn {
+    padding: 14px 30px;
+    font-size: 18px;
+    min-width: 150px;
+    display: block;
+    text-align: center;
+}
+img {
+    max-width: 100%; /* Image scales with the container width */
+    height: auto;    /* Maintain aspect ratio */
+}
+/* Initially hide navigation links on mobile */
+.nav-links {
+    display: none;
+}
+
+/* Display nav links when toggle class is added */
+.navbar.toggle .nav-links {
+    display: block;
+}
+
+/* Media query for smaller screens (mobile devices) */
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+    }
+
+    /* Hamburger icon styling */
+    .toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 1;  /* Ensure the icon is above other elements */
+    }
+
+    /* Style for the navigation links on mobile */
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #333;
+        display: none;
+        text-align: center;
+    }
+
+    .nav-links li {
+        padding: 15px;
+        border-top: 1px solid #fff;  /* Optional border between menu items */
+    }
+
+    .nav-links li a {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+    }
+}
+body {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 2em; /* Reduce font size for mobile */
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 14px;
+}

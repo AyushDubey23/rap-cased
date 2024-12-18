@@ -152,61 +152,92 @@ header {
 }
 
 .products {
-    padding: 5rem 2rem;
+    padding: 60px 20px;
 }
 
 .products h2 {
+    font-size: 32px;
+    font-weight: 800;
     text-align: center;
-    margin-bottom: 2.5rem;
-    font-size: 2.5rem;
+    margin-bottom: 40px;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .product-card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     text-align: center;
-    padding: 1.5rem;
-    transition: transform 0.3s ease;
 }
 
 .product-card img {
     width: 100%;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.product-card img:hover {
-    transform: scale(1.1);
+    height: auto;
+    max-width: 200px;
+    margin-bottom: 15px;
 }
 
 .product-card h3 {
-    margin: 1rem 0;
-    font-size: 1.5rem;
-    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .product-card p {
-    font-size: 1rem;
-    color: #666;
+    font-size: 16px;
+    margin-bottom: 15px;
 }
 
 .add-to-cart {
-    background: #f4a261;
+    background-color: #f2a900;
     color: #fff;
-    padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 30px;
-    font-size: 1rem;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-card img {
+        max-width: 150px;
+    }
+
+    .product-card h3 {
+        font-size: 16px;
+    }
+
+    .product-card p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card img {
+        max-width: 120px;
+    }
+
+    .product-card h3 {
+        font-size: 14px;
+    }
+
+    .product-card p {
+        font-size: 12px;
+    }
 }
 
 .add-to-cart:hover {

@@ -3,7 +3,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RapCased - Premium Rap-Inspired Phone Cases</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -16,10 +15,8 @@
                     <img src="images/LOGO.jpg" alt="RapCased Logo" class="logo">
                     <h1 class="website-name">RapCased</h1>
                 </div>
-    
-                <!-- Add hamburger icon here -->
+                <!-- Hamburger Icon -->
                 <span class="toggle">&#9776;</span>
-    
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#products">Products</a></li>
@@ -29,16 +26,26 @@
                 </ul>
             </div>
         </nav>
-    </header>
+     </header>
+     <script>
+        // Select the toggle button and navigation links
+        const toggle = document.querySelector('.toggle');
+        const navLinks = document.querySelector('.nav-links');
     
+        // Add click event to toggle menu visibility
+        toggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
     
 
     <section id="home" class="home">
         <div class="home-content">
-            <h1>Rap-Inspired Premium Phone Cases</h1>
-            <p>Discover cases that resonate with your love for rap and hip-hop culture. Style meets durability in every design.</p>
+            <h1><span>Rap-Inspired</span> Premium Phone Cases</h1>
+            <p>Discover cases that resonate with your love for rap and hip-hop culture. Where style meets durability.</p>
             <a href="#products" class="btn">Shop Now</a>
         </div>
+
     </section>
 
     <section id="features" class="features">
@@ -46,14 +53,17 @@
             <h2>Why Choose RapCased?</h2>
             <div class="features-grid">
                 <div class="feature">
+                    <i class="fas fa-palette"></i>
                     <h3>Unique Designs</h3>
                     <p>Inspired by iconic albums and songs, our cases let you carry the legacy of rap wherever you go.</p>
                 </div>
                 <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
                     <h3>Durable Materials</h3>
                     <p>Made with high-quality materials to protect your phone while keeping it stylish.</p>
                 </div>
                 <div class="feature">
+                    <i class="fas fa-globe"></i>
                     <h3>Global Shipping</h3>
                     <p>We deliver to your doorstep, no matter where you are in the world.</p>
                 </div>
@@ -63,7 +73,7 @@
 
     <section id="products" class="products">
         <div class="container">
-            <h2>Our Collection</h2>
+            <h2>BEST SELLERS</h2>
             <div class="product-grid">
                 <div class="product-card">
                     <img src="images/a.jpg" alt="Kanye West - Graduation Case">
@@ -114,8 +124,20 @@
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
                 <div class="product-card">
-                    <img src="images/i.jpg" alt="Lil Wayne - Tha Carter IV Case">
-                    <h3>Lil Wayne - "Tha Carter IV"</h3>
+                    <img src="images/k.jpg" alt="XXXTentacion - bad vibes forever">
+                    <h3>XXXTentacion - "Bad vibes forever"</h3>
+                    <p>Price: ₹1,099</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/l.jpg" alt="Juice Wrld - Legends Never Die ">
+                    <h3>Juice Wrld - "Legends Never Die"</h3>
+                    <p>Price: ₹1,199</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/m.jpg" alt="Young Thug - Business is Business">
+                    <h3>Young Thug - "Business is Business"</h3>
                     <p>Price: ₹1,199</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
@@ -124,10 +146,8 @@
                     <h3>Future - "Mixtape Pluto"</h3>
                     <p>Price: ₹1,299</p>
                     <button class="add-to-cart">Add to Cart</button>
-                </div>
             </div>
         </div>
-
     </section>
 
     <section id="reviews" class="reviews">

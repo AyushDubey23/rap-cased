@@ -212,16 +212,33 @@ header {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 products per row on screens smaller than 768px */
+        grid-template-columns: repeat(2, 1fr); /* 2 products per row on medium screens */
     }
 }
 
 @media (max-width: 480px) {
     .product-grid {
-        grid-template-columns: 1fr; /* 1 product per row on smaller screens */
+        grid-template-columns: repeat(2, 1fr); /* 2 products per row on smaller screens */
+        gap: 10px; /* Slightly reduce gap for tighter layout */
+    }
+    
+    .product-card {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+    
+    .product-card h3 {
+        font-size: 1.2rem; /* Slightly smaller font for titles */
+    }
+    
+    .product-card p {
+        font-size: 1rem; /* Slightly smaller font for prices */
+    }
+    
+    .product-card .add-to-cart {
+        padding: 8px 15px; /* Slightly smaller button */
+        font-size: 0.9rem;
     }
 }
-
 .add-to-cart:hover {
     background: #e76f51;
     transform: scale(1.1);

@@ -159,6 +159,14 @@ header {
     padding: 0 10px;
 }
 
+//* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts product grid to fit 2 per row */
+    gap: 15px; /* Reduced gap to ensure proper fitting */
+    padding: 0 10px;
+}
+
 /* Product Card */
 .product-card {
     background: #fff;

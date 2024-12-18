@@ -218,7 +218,7 @@ header {
 
 /* Add to Cart Button */
 .product-card .add-to-cart {
-    background-color: #ff6347;
+    background-color: #0f0d0d;
     border: none;
     color: #fff;
     padding: 8px 12px;
@@ -228,7 +228,7 @@ header {
 }
 
 .product-card .add-to-cart:hover {
-    background-color: #ff4500;
+    background-color: #000000;
 }
 
 /* Mobile and Tablet View (2 products per row) */
@@ -308,7 +308,7 @@ header {
 }
 
 .add-to-cart:hover {
-    background: #e76f51;
+    background: #0b0908;
     transform: scale(1.1);
 }
 

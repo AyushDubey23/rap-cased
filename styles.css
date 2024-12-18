@@ -505,25 +505,7 @@ footer {
     color: #666;
     margin-top: 10px;
 }
-/* Media query for smaller devices (mobile) */
-@media (max-width: 768px) {
-    #features {
-        padding: 30px 0; /* Reduce padding on smaller screens */
-    }
-
-    #features h2 {
-        font-size: 24px; /* Adjust font size for smaller screens */
-    }
-
-    .feature h3 {
-        font-size: 20px; /* Adjust feature heading font size */
-    }
-
-    .feature p {
-        font-size: 14px; /* Adjust feature description font size */
-    }
-}
-/* Add flexbox layout for product grid */
+/* Product grid layout */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Four items per row on larger screens */
@@ -531,23 +513,35 @@ footer {
     margin-top: 20px;
 }
 
-/* Mobile responsiveness: 1 product per row */
-@media (max-width: 768px) {
+/* Mobile responsiveness for tablet and medium devices (1-2 items per row) */
+@media (max-width: 1024px) {
     .product-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
     }
 
     .product-card {
-        flex: 1 1 calc(33.333% - 20px); /* 3 items per row on mobile */
         margin-bottom: 20px;
     }
 }
 
-/* Extra small devices, 1 product per row */
-@media (max-width: 480px) {
+/* Mobile responsiveness (under 768px) - 1 item per row */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 item per row */
+    }
+
     .product-card {
-        flex: 1 1 100%; /* Full width for one item per row */
+        margin-bottom: 20px;
+    }
+}
+
+/* Extra small devices, 1 product per row with better spacing */
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 product per row */
+    }
+
+    .product-card {
+        margin-bottom: 20px;
     }
 }

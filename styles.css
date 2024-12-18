@@ -151,92 +151,73 @@ header {
     transform: translateY(-10px);
 }
 
-.products {
-    padding: 60px 20px;
-}
-
-.products h2 {
-    font-size: 32px;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
+./* Product Grid */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusts product grid to fit 2 per row */
     gap: 20px;
+    padding: 0 10px;
 }
 
+/* Product Card */
 .product-card {
-    background-color: #fff;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
+/* On Hover Product Card */
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Product Image */
 .product-card img {
     width: 100%;
     height: auto;
-    max-width: 200px;
-    margin-bottom: 15px;
+    border-radius: 8px;
 }
 
+/* Product Title */
 .product-card h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    margin: 10px 0;
 }
 
+/* Product Price */
 .product-card p {
-    font-size: 16px;
-    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #888;
 }
 
-.add-to-cart {
-    background-color: #f2a900;
-    color: #fff;
+/* Add to Cart Button */
+.product-card .add-to-cart {
+    background-color: #000000;
     border: none;
+    color: #fff;
     padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+    font-size: 1rem;
     border-radius: 5px;
+    cursor: pointer;
 }
 
+.product-card .add-to-cart:hover {
+    background-color: #000000;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .product-card img {
-        max-width: 150px;
-    }
-
-    .product-card h3 {
-        font-size: 16px;
-    }
-
-    .product-card p {
-        font-size: 14px;
+        grid-template-columns: repeat(2, 1fr); /* 2 products per row on screens smaller than 768px */
     }
 }
 
 @media (max-width: 480px) {
     .product-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .product-card img {
-        max-width: 120px;
-    }
-
-    .product-card h3 {
-        font-size: 14px;
-    }
-
-    .product-card p {
-        font-size: 12px;
+        grid-template-columns: 1fr; /* 1 product per row on smaller screens */
     }
 }
 

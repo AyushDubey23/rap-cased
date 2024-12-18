@@ -17,7 +17,7 @@ body {
 header {
     background: linear-gradient(90deg, #121212, #333);
     color: #fff;
-    padding: 15px 20px;
+    padding: 5px 20px;
     animation: slideInHeader 0.5s ease-out;
 }
 
@@ -52,11 +52,11 @@ header {
 
 .website-name {
     font-size: 1.8rem;
-    margin-left: 10px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
+    margin-left: 15px;
+    font-weight: 100000;
+    letter-spacing: 2px;
     transition: color 0.3s ease;
-    color: #f4a261;
+    color: #ffffff;
 }
 
 .nav-links {
@@ -78,7 +78,7 @@ header {
 }
 
 .nav-links a:hover {
-    color: #f4a261;
+    color: #000000;
     transform: translateY(-5px);
 }
 
@@ -505,134 +505,320 @@ footer {
     color: #666;
     margin-top: 10px;
 }
-@media (max-width: 1024px) {
-    body {
-        font-size: 16px; /* Slightly smaller font on tablet */
-    }
-
-    .navbar {
-        padding: 10px 15px; /* Reduced padding for navbar */
-    }
-
-    .navbar .logo {
-        width: 40px; /* Smaller logo for tablet */
-    }
-
-    .website-name {
-        font-size: 1.5rem; /* Slightly smaller website name */
-    }
-
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 products per row */
-    }
-
-    .product-card {
-        padding: 15px; /* Reduced padding for product card */
-    }
-
-    .product-card h3 {
-        font-size: 1.4rem; /* Reduced font size for product titles */
-    }
-
-    .product-card p {
-        font-size: 0.9rem; /* Smaller text for product description */
-    }
-
-    .add-to-cart {
-        font-size: 0.9rem; /* Smaller button font */
-        padding: 0.5rem 1rem; /* Smaller button padding */
-    }
-
-    .btn {
-        font-size: 16px; /* Adjusted button font size */
-        padding: 12px 24px; /* Adjusted button size */
-    }
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Why Choose Section */
+.why-choose {
+    background-color: #ffffff;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.why-choose-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.item {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.item h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Responsive styles for mobile and tablet */
 @media (max-width: 768px) {
-    body {
-        font-size: 15px; /* Smaller font size for smaller screens */
+    .section-title {
+        font-size: 2rem;
     }
 
-    .navbar {
-        padding: 8px 12px; /* Reduced navbar padding */
+    .why-choose-items {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .navbar .logo {
-        width: 35px; /* Even smaller logo */
+    .item {
+        padding: 1.5rem;
     }
 
-    .website-name {
-        font-size: 1.3rem; /* Further reduce font size */
+    .item h3 {
+        font-size: 1.4rem;
     }
 
-    .product-grid {
-        grid-template-columns: 1fr 1fr; /* 2 items per row */
-    }
-
-    .product-card {
-        padding: 10px; /* Smaller padding in product card */
-    }
-
-    .product-card h3 {
-        font-size: 1.2rem; /* Smaller font for product title */
-    }
-
-    .product-card p {
-        font-size: 0.8rem; /* Further reduced text size */
-    }
-
-    .add-to-cart {
-        font-size: 0.8rem; /* Smaller button font */
-        padding: 0.4rem 0.8rem; /* Reduced padding for button */
-    }
-
-    .btn {
-        font-size: 15px; /* Smaller font for buttons */
-        padding: 10px 20px; /* Adjusted padding */
+    .item p {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
-    body {
-        font-size: 14px; /* Smallest font size for mobile devices */
+    .section-title {
+        font-size: 1.8rem;
     }
 
+    .why-choose-items {
+        grid-template-columns: 1fr;
+    }
+
+    .item {
+        padding: 1rem;
+    }
+
+    .item h3 {
+        font-size: 1.2rem;
+    }
+
+    .item p {
+        font-size: 0.85rem;
+    }
+}
+/* General body styles */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+/* Reset all padding and margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar general styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 10px 20px;
+    color: white;
+}
+
+.toggle {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* Hidden nav-links for mobile */
+.nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 10;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;  /* Smaller font size for mobile devices */
+    }
+
+    /* Navbar styles for smaller screens */
     .navbar {
-        padding: 5px 10px; /* Minimal navbar padding */
+        padding: 8px 12px;  /* Reduced padding */
     }
 
     .navbar .logo {
-        width: 30px; /* Further reduce logo size */
+        width: 35px;  /* Smaller logo */
     }
 
     .website-name {
-        font-size: 1.2rem; /* Smaller website name */
+        font-size: 1.3rem;  /* Smaller font size */
+    }
+
+    .nav-links {
+        display: none;  /* Hide by default */
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;  /* Space out the menu items */
     }
 
     .product-grid {
-        grid-template-columns: 1fr; /* 1 item per row */
+        grid-template-columns: 1fr 1fr;  /* 2 items per row */
     }
 
     .product-card {
-        padding: 8px; /* Minimal padding in product card */
+        padding: 10px;  /* Smaller padding in product card */
     }
 
     .product-card h3 {
-        font-size: 1rem; /* Small font size for product title */
+        font-size: 1.2rem;  /* Smaller font for product title */
     }
 
     .product-card p {
-        font-size: 0.7rem; /* Smallest font size for product description */
+        font-size: 0.8rem;  /* Smaller product description text */
     }
 
     .add-to-cart {
-        font-size: 0.7rem; /* Smallest button font */
-        padding: 0.3rem 0.7rem; /* Small padding for button */
+        font-size: 0.8rem;  /* Smaller button font */
+        padding: 0.4rem 0.8rem;  /* Smaller button padding */
     }
 
     .btn {
-        font-size: 14px; /* Smallest font for buttons */
-        padding: 8px 16px; /* Reduced button size */
+        font-size: 15px;  /* Adjusted button font size */
+        padding: 10px 20px;  /* Adjusted button size */
     }
+}
+
+/* Smallest mobile screen (up to 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;  /* Smallest font size for mobile */
+    }
+
+    .navbar {
+        padding: 5px 10px;  /* Minimal padding */
+    }
+
+    .navbar .logo {
+        width: 30px;  /* Even smaller logo */
+    }
+
+    .website-name {
+        font-size: 1.2rem;  /* Smallest website name */
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;  /* 1 product per row */
+    }
+
+    .product-card {
+        padding: 8px;  /* Minimal padding */
+    }
+
+    .product-card h3 {
+        font-size: 1rem;  /* Small product title font */
+    }
+
+    .product-card p {
+        font-size: 0.7rem;  /* Smallest product description text */
+    }
+
+    .add-to-cart {
+        font-size: 0.7rem;  /* Smallest button font */
+        padding: 0.3rem 0.7rem;  /* Minimal button padding */
+    }
+
+    .btn {
+        font-size: 14px;  /* Smallest button font */
+        padding: 8px 16px;  /* Reduced button size */
+    }
+}
+
+/* Ensure other sections scale down properly */
+.home {
+    background: url('images/home-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.home-content h1 {
+    font-size: 2rem;  /* Smaller title */
+}
+
+.home-content p {
+    font-size: 1rem;  /* Smaller description */
+}
+
+.features {
+    padding: 4rem 2rem;  /* Reduced padding */
+}
+
+.features h2 {
+    font-size: 2rem;  /* Smaller heading */
+}
+
+.features-grid {
+    grid-template-columns: 1fr 1fr;  /* 2 items per row */
+}
+
+.feature {
+    padding: 1.5rem;  /* Reduced padding */
+    font-size: 1rem;  /* Smaller font */
+}
+
+.reviews h2 {
+    font-size: 2rem;  /* Smaller heading */
+}
+
+.contact form {
+    max-width: 100%;  /* Full width */
+    padding: 1.5rem;  /* Reduced padding */
+}
+
+form input,
+form textarea {
+    font-size: 0.9rem;  /* Smaller text input size */
+}
+
+footer {
+    font-size: 0.9rem;  /* Smaller footer text */
 }

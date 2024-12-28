@@ -945,3 +945,22 @@ footer {
         height: auto;
     }
 }
+/* Ensure the product grid has a proper layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Display 3 products per line */
+    gap: 20px;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 products per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 product per row on smaller screens */
+    }
+}

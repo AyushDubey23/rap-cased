@@ -175,6 +175,22 @@ header {
     max-width: 1200px;
     margin: 0 auto;
 }
+.best-sellers-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    margin-bottom: 0.8rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(45deg, #1a1a1a 0%, #333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center; /* Centers the text horizontally */
+    width: 100%; /* Ensures the element takes up full width */
+}
+
 
 .product-card {
     display: flex;

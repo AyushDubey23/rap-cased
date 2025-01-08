@@ -3,6 +3,10 @@ if (!localStorage.getItem('cart')) {
     localStorage.setItem('cart', JSON.stringify([]));
 }
 
+// Constant variables for cart animation
+const CART_HIDDEN_TRANSLATE_X = 'translateX(100%)';
+const CART_SHOWN_TRANSLATE_X = 'translateX(0)';
+
 // Function to update the cart UI
 function updateCart() {
     const cart = JSON.parse(localStorage.getItem('cart'));
@@ -51,8 +55,7 @@ function addToCart(name, price) {
 // Remove item from cart
 function removeItemFromCart(index) {
     const cart = JSON.parse(localStorage.getItem('cart'));
-    cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem('cart', JSON.stringify(cart.filter((_, i) => i !== +index)));
     updateCart();
 }
 
@@ -66,13 +69,13 @@ function clearCart() {
 document.getElementById('cart-btn').addEventListener('click', () => {
     const cartSection = document.getElementById('cart');
     cartSection.style.display = (cartSection.style.display === 'none' || cartSection.style.display === '') ? 'block' : 'none';
-    cartSection.style.transform = (cartSection.style.transform === 'translateX(100%)') ? 'translateX(0)' : 'translateX(100%)';
+    cartSection.style.transform = (cartSection.style.transform === CART_HIDDEN_TRANSLATE_X) ? CART_SHOWN_TRANSLATE_X : CART_HIDDEN_TRANSLATE_X;
 });
 
 // Close cart button
 document.getElementById('close-cart').addEventListener('click', () => {
     const cartSection = document.getElementById('cart');
-    cartSection.style.transform = 'translateX(100%)';
+    cartSection.style.transform = CART_HIDDEN_TRANSLATE_X;
 });
 
 // Clear Cart Button
@@ -88,10 +91,13 @@ const buttons = document.querySelectorAll('.add-to-cart');
 buttons.forEach(button => {
     button.addEventListener('click', (e) => {
         const productName = e.target.parentElement.querySelector('h3').textContent;
-        const productPrice = e.target.parentElement.querySelector('p').textContent.split('₹')[1];
+        // Extract price as a numeric value
+        const productPrice = parseFloat(e.target.parentElement.querySelector('p').textContent.split('₹')[1]);
         addToCart(productName, productPrice);
     });
 });
+
+// Toggle navigation visibility
 const toggleBtn = document.querySelector('.toggle');
 const navLinks = document.querySelector('.nav-links');
 

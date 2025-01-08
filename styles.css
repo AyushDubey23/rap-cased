@@ -114,7 +114,19 @@ header {
 
 .home-content p {
     font-size: 1.5rem;
-    margin-bottom: 2rem;
+    
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    margin-bottom: 0.8rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(45deg, #ffffff 0%, #d7d7d7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center; /* Centers the text horizontally */
+    width: 100%; /* Ensures the element takes up full width */
 }
 
 .btn {
@@ -137,22 +149,22 @@ header {
 
 /* Features Section */
 .features {
-    padding: 5rem 2rem;
-    background: #1a1a1a;
+    padding: 4rem 2rem;
+    background: #121212;
     text-align: center;
-    color: #f5f5f5; /* Off-white */
 }
 
 .features h2 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 4rem;
+   
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 0.05em;
-    color: #f5f5f5;
+    color: #1a1a1a;
     margin-bottom: 0.8rem;
-    text-shadow: 1px 1px 1px rgba(66, 66, 66, 0.05);
-    background: linear-gradient(45deg, #ffffff 0%, #f5f5f5 100%);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(45deg, #ffffff 0%, #a2a2a2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center; /* Centers the text horizontally */
@@ -161,56 +173,83 @@ header {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensures consistent centering */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 1200px; /* Restrict width for better centering */
-    margin: 0 auto; /* Centers the grid */
-    padding: 0 1rem; /* Add slight padding to avoid touching edges */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .feature {
-    background: #ffffff;
+    background: #1a1a1a;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #f5f5f5;
+    border: 2px solid #333;
+    text-align: left;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .feature:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    border-color: red;
 }
 
-.feature h3 {
+/* Reviews Section */
+.reviews {
+    padding: 4rem 2rem;
+    background: #1a1a1a;
+    text-align: center;
+}
+
+.reviews h2 {
+    font-size: 2.5rem;
+    
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        color: #1a1a1a;
+        margin-bottom: 0.8rem;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+        background: linear-gradient(45deg, #1a1a1a 0%, #333 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center; /* Centers the text horizontally */
+        width: 100%; /* Ensures the element takes up full width */
+    
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.review {
+    background: #2c2c2c;
+    padding: 1.5rem;
+    border: 2px solid #333;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.review:hover {
+    transform: scale(1.05);
+    border-color: red;
+}
+
+.reviewer-name {
     font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
-    text-transform: uppercase;
-    font-weight: 800;
+    font-size: 1.1rem;
+    font-weight: 400;
     letter-spacing: 0.05em;
     color: #ffffff;
     margin-bottom: 0.8rem;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+    text-shadow: 1px 1px 1px rgba(54, 54, 54, 0.05);
     background: linear-gradient(45deg, #ffffff 0%, #ffffff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center; /* Centers the text horizontally */
     width: 100%; /* Ensures the element takes up full width */
 }
-
-.feature p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    color: #f5f5f5;
-    margin-bottom: 0.9rem;
-    text-shadow: 1px 1px 1px rgba(66, 66, 66, 0.05);
-    background: linear-gradient(45deg, #ffffff 0%, #787878 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center; /* Centers the text horizontally */
-    width: 100%; /* Ensures the element takes up full width */}
 
 /* Product Section */
 .product-grid {
@@ -226,8 +265,12 @@ header {
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
-        max-width: 90%; /* Reduce max-width for better centering */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Increase minimum width */
+        gap: 20px; /* Reduce gap for smaller screens */
+        justify-content: center;
+        align-items: center; 
+        padding: 10px; /* Reduce padding */
     }
 }
 
@@ -257,7 +300,8 @@ header {
 }
 
 .product-card:hover {
-    transform: translateY(-10px);
+    transform: scale(2.05);
+    border-color: red;
 }
 
 .product-card img {
@@ -269,19 +313,35 @@ header {
 }
 
 .product-card h3 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    font-weight: 600;
-    color: #000000;
-    margin: 12px 0;
-    letter-spacing: -0.01em;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    margin-bottom: 0.8rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(45deg, #000000 0%, #333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center; /* Centers the text horizontally */
+    width: 100%; /* Ensures the element takes up full width */
 }
 
 .product-card p {
+
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
-    color: #4a4a4a;
-    font-weight: 500;
-    margin: 10px 0 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #343434;
+    margin-bottom: 0.8rem;
+    text-shadow: 1px 1px 1px rgba(54, 54, 54, 0.05);
+    background: linear-gradient(45deg, #303030 0%, #333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center; /* Centers the text horizontally */
+    width: 100%; /* Ensures the element takes up full width */
 }
 
 .add-to-cart {
@@ -301,7 +361,9 @@ header {
 .add-to-cart:hover {
     background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(31, 31, 31, 0.15);
+    box-shadow: 0 5px 15px rgba(179, 14, 14, 0.15);
+    border-color: red;
+
 }
 
 /* Reviews Section */
@@ -313,9 +375,19 @@ header {
 }
 
 .reviews h2 {
-    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8.1rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.05em;
     color: #ffffff;
-    margin-bottom: 2rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 1px 1px 1px rgba(54, 54, 54, 0.05);
+    background: linear-gradient(45deg, #ffffff 0%, #858585 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center; /* Centers the text horizontally */
+    width: 100%; /* Ensures the element takes up full width */
 }
 
 .reviews-grid {
@@ -334,17 +406,33 @@ header {
 }
 
 .review p {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    text-shadow: 1px 1px 1px rgba(54, 54, 54, 0.05);
+    background: linear-gradient(45deg, #ffffff 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center; /* Centers the text horizontally */
+    width: 100%; /* Ensures the element takes up full width */
 }
 
 .reviewer-name {
-    font-size: 0.8rem;
-    color: #888;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    text-shadow: 1px 1px 1px rgba(54, 54, 54, 0.05);
+    background: linear-gradient(45deg, #ffffff 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center; /* Centers the text horizontally */
+    width: 100%; /* Ensures the element takes up full width */
 }
 
 /* Contact Section */
@@ -521,14 +609,15 @@ form button:hover {
     background: #181818;
     transform: scale(1.05);
 }
-
+/* Footer */
+/* Footer */
 footer {
-    background: #121212;
-    color: #fff;
-    padding: 1rem 0;
+    padding: 2rem;
+    background: #1a1a1a;
     text-align: center;
+    color: #ffffff;
+    font-size: 0.9rem;
 }
-
 /* General styles for the navbar */
 .navbar {
     display: flex;
@@ -676,9 +765,19 @@ footer {
 #features h2 {
     text-align: center;
     font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: white;  /* White text for contrast on dark gray */
+
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    margin-bottom: 0.8rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(45deg, #1a1a1a 0%, #333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center; /* Centers the text horizontally */
+    width: 100%; /* Ensures the element takes up full width */
 }
 
 /* Style for the features grid */
@@ -703,15 +802,36 @@ footer {
 
 .feature h3 {
     font-size: 24px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-top: 15px;
+
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    margin-bottom: 0.8rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(45deg, #ffffff 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center; /* Centers the text horizontally */
+    width: 100%; /* Ensures the element takes up full width */
 }
 
 .feature p {
     font-size: 16px;
-    color: #ffffff;
-    margin-top: 10px;
+
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    margin-bottom: 0.8rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(45deg, #ffffff 0%, #d0d0d0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center; /* Centers the text horizontally */
+    width: 100%; /* Ensures the element takes up full width */
 }
 /* General styles */
 body {
@@ -899,9 +1019,15 @@ form textarea {
     font-size: 0.9rem;  /* Smaller text input size */
 }
 
+/* Footer */
 footer {
-    font-size: 0.9rem;  /* Smaller footer text */
+    padding: 2rem;
+    background: #1a1a1a;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.9rem;
 }
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -944,10 +1070,14 @@ footer {
 
     
 header, footer {
-    display: flex;
-    justify-content: space-between;  /* Space out the items */
-    align-items: center;            /* Align items vertically in the center */
-    padding: 10px 20px;
+   /* Footer */
+footer {
+    padding: 2rem;
+    background: #1a1a1a;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
   }
   .section {
     display: grid;

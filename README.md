@@ -28,8 +28,8 @@ Clone the Repository
 
 bash
 Copy code
-git clone https://github.com/your-username/rapcased.git
-Navigate to the project directory
+[git clone https://github.com/your-username/rapcased.git
+](https://ayushdubey23.github.io/rap-cased/)Navigate to the project directory
 
 bash
 Copy code

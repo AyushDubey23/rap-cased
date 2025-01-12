@@ -1063,7 +1063,7 @@ footer {
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
+        grid-template-columns: repeat(1, 1fr); /* Two columns for smaller screens */
         max-width: 90%; /* Reduce max-width for better centering */
     }
 }

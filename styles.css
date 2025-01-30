@@ -1,41 +1,166 @@
-/* General Reset */
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    overflow-x: hidden;
-    transition: all 0.3s ease;
-    background-color: #f9f9f9;
-}
-
+*/* Reset styles for consistency */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Header */
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #000000;
+    overflow-x: hidden;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Header styles */
 header {
-    background: linear-gradient(90deg, #121212, #333);
-    color: #f5f5f5; /* Off-white */
-    padding: 5px 20px;
+    background-color: #000000; /* Solid black header */
+    color: #ecf0f1;
+    padding: 15px 40px;
+    border-bottom: 1px solid #bdc3c7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     animation: slideInHeader 0.5s ease-out;
+    font-weight: 300;
+    text-transform: uppercase;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+/* Header slide-in animation */
+@keyframes slideInHeader {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Smaller text in header */
+header h1, header h2, header h3 {
+    font-size: 1rem; /* Reduced font size */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.5px;
+}
+
+/* Navigation bar styles */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    transition: transform 0.3s ease;
+    background: #000000; /* Solid black background */
+    z-index: 1000;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.navbar:hover {
-    transform: scale(1.05);
+/* Logo and heading */
+nav .logo-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+nav .logo-heading img {
+    height: 40px;
+    width: auto;
+}
+
+nav .logo-heading h1 {
+    color: #f1f1f1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Menu styles */
+nav .menu {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: #f1f1f1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: #ff6b6b;
+    text-shadow: 0 2px 15px rgba(255, 107, 107, 0.6);
+    transform: translateY(-2px);
+}
+
+nav a:active {
+    transform: scale(0.95);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    nav .logo-heading {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+
+    nav .logo-heading img {
+        height: 30px;
+    }
+
+    nav .menu {
+        display: none; /* Hide menu on small screens */
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        display: block;
+        background-color: #ff6b6b;
+        color: white;
+        padding: 10px 15px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav .logo-heading h1 {
+        font-size: 20px;
+    }
+}
+
+/* Logo container and hover effects */
 .logo-container {
     display: flex;
     align-items: center;
@@ -61,6 +186,7 @@ header {
     color: #f5f5f5; /* Off-white */
 }
 
+/* Nav links styles */
 .nav-links {
     display: flex;
     list-style: none;
@@ -80,11 +206,11 @@ header {
 }
 
 .nav-links a:hover {
-    color: #000000;
+    color: #ffffff;
     transform: translateY(-5px);
 }
 
-/* Home Section */
+/* Home section styles */
 .home {
     background: url('images/home-bg.jpg') no-repeat center center/cover;
     height: 100vh;
@@ -98,9 +224,9 @@ header {
 
 .home-content h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 6rem;
+    font-size: 2rem;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 500;
     letter-spacing: 0.05em;
     color: #1a1a1a;
     margin-bottom: 0.8rem;
@@ -109,16 +235,12 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center; /* Centers the text horizontally */
-    width: 100%; /* Ensures the element takes up full width */
+    width: 100%;
 }
 
 .home-content p {
-    font-size: 1.5rem;
-    
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
+    font-size: 5rem;
     font-weight: 800;
-    letter-spacing: 0.05em;
     color: #1a1a1a;
     margin-bottom: 0.8rem;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
@@ -126,13 +248,30 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center; /* Centers the text horizontally */
-    width: 100%; /* Ensures the element takes up full width */
+    width: 100%; 
 }
 
+.home-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 0.8rem;
+}
+
+.home-content p {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    text-transform: uppercase; /* Keeps the heading capitalized */
+
+    margin-bottom: 0.8rem;
+}
+
+/* Button styles */
 .btn {
     display: inline-block;
-    background: #ffffff;
-    color: #f5f5f5; /* Off-white */
+    background: #ff0000;
+    color: #ffffff; /* Off-white */
     padding: 1rem 2rem;
     border: none;
     border-radius: 30px;
@@ -147,471 +286,397 @@ header {
     transform: scale(1.1);
 }
 
-/* Features Section */
 .features {
     padding: 4rem 2rem;
-    background: #121212;
+    background: #121212; /* Deep black background */
     text-align: center;
+    color: #e0e0e0; /* Light gray text */
+    font-family: 'Inter', sans-serif;
 }
 
 .features h2 {
-    font-size: 4rem;
-   
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
+    font-size: 3.5rem;
     font-weight: 800;
-    letter-spacing: 0.05em;
-    color: #1a1a1a;
-    margin-bottom: 0.8rem;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
-    background: linear-gradient(45deg, #ffffff 0%, #a2a2a2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center; /* Centers the text horizontally */
-    width: 100%; /* Ensures the element takes up full width */
+    letter-spacing: 0.1em;
+    text-transform: uppercase; /* Keeps the heading capitalized */
+    color: #ffffff; /* White text */
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #ff0000; /* Red underline for emphasis */
+    display: inline-block; /* Makes the underline specific to the heading */
 }
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .feature {
-    background: #1a1a1a;
+    background: #1a1a1a; /* Dark gray card */
     padding: 2rem;
-    border: 2px solid #333;
+    border: 2px solid #333; /* Subtle gray border */
+    border-radius: 0; /* Square corners for an official look */
     text-align: left;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    color: #e0e0e0; /* Light gray text for contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
 }
 
 .feature:hover {
-    transform: scale(1.05);
-    border-color: red;
+    transform: scale(1.03); /* Slight hover effect */
+    border-color: #ff0000; /* Red border on hover */
+    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.5); /* Subtle red shadow on hover */
 }
 
-/* Reviews Section */
-.reviews {
-    padding: 4rem 2rem;
-    background: #1a1a1a;
-    text-align: center;
+.feature h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff; /* White for subheadings */
+    margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
-.reviews h2 {
-    font-size: 2.5rem;
-    
-        font-family: 'Montserrat', sans-serif;
-        text-transform: uppercase;
-        font-weight: 800;
-        letter-spacing: 0.05em;
-        color: #1a1a1a;
-        margin-bottom: 0.8rem;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
-        background: linear-gradient(45deg, #1a1a1a 0%, #333 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-align: center; /* Centers the text horizontally */
-        width: 100%; /* Ensures the element takes up full width */
-    
+.feature p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cccccc; /* Light gray for body text */
 }
 
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.review {
-    background: #2c2c2c;
-    padding: 1.5rem;
-    border: 2px solid #333;
-    position: relative;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.review:hover {
-    transform: scale(1.05);
-    border-color: red;
-}
-
-.reviewer-name {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    color: #ffffff;
-    margin-bottom: 0.8rem;
-    text-shadow: 1px 1px 1px rgba(54, 54, 54, 0.05);
-    background: linear-gradient(45deg, #ffffff 0%, #ffffff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center; /* Centers the text horizontally */
-    width: 100%; /* Ensures the element takes up full width */
-}
-
-/* Product Section */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider minimum width for larger cards */
-    gap: 20px;
-    padding: 20px;
-    max-width: 1400px; /* Increased max-width for wider layout */
-    margin: 20px auto; /* Added top/bottom margin for spacing */
-    box-sizing: border-box;
-    width: 95%; /* Occupy almost full width with some margin */
-}
-
-/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px; /* Slightly reduced gap on smaller screens */
-        padding: 15px;
-        width: 98%; /* Even wider on smaller screens */
-        margin: 10px auto; /* Reduced margins on small screens */
+    .features h2 {
+        font-size: 2.5rem; /* Smaller heading for mobile */
+    }
+
+    .feature {
+        padding: 1.5rem; /* Reduced padding for smaller screens */
+    }
+
+    .feature h3 {
+        font-size: 1.3rem; /* Adjusted subheading size */
     }
 }
 
+
+/* Product Section */
 .best-sellers-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 0.05em;
-    color: #1a1a1a;
-    margin-bottom: 2rem; /* Increased margin for better spacing */
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
-    background: linear-gradient(45deg, #1a1a1a 0%, #333 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #ff0000; /* Red text for emphasis */
+    margin-bottom: 2rem;
     text-align: center;
+    border-bottom: 3px solid #333333; /* Black underline for a bold look */
+    padding-bottom: 0.5rem;
+    width: 100%;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default: 3 cards per row */
+    gap: 2rem;
+    padding: 2rem 5%; /* Take full width with side padding */
+    margin: 0 auto;
+    box-sizing: border-box;
     width: 100%;
 }
 
-.product-card {
-    padding: 20px; /* Reduced padding */
-    border: 2px solid #333333; /* Thicker, solid border */
-    border-radius: 0; /* Removed border-radius for square corners */
-    background-color: #111111;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly softer shadow */
-    transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
-    transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
-    overflow: hidden; /* Ensure content doesn't overflow */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 2fr); /* 2 cards per row on smaller screens */
+    }
 }
 
 .product-card:hover {
-    transform: scale(1.05); /* Reduced scale on hover */
-    border-color: red;
+    transform: scale(1.05);
+    border-color: #ff0000; /* Red border on hover */
+}
+
+.product-card {
+    background: #ffffff; /* White card */
+    padding: 1.5rem;
+    border: 2px solid #dddddd; /* Subtle gray border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-card img {
-    width: 100%;
-    height: 300px; /* Fixed height for consistent image sizes */
-    object-fit: cover;
-    margin-bottom: 10px;
-    display: block; /* Prevents image from adding extra space */
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin-bottom: 1rem;
+    border-radius: 0; /* Square edges */
 }
+
 
 .product-card h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    color: #1a1a1a;
+    font-weight: 700;
+    color: #333333; /* Dark text */
     margin-bottom: 0.8rem;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
-    background: linear-gradient(45deg, #000000 0%, #333 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center; /* Centers the text horizontally */
-    width: 100%; /* Ensures the element takes up full width */
+    text-transform: uppercase;
 }
 
 .product-card p {
-
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    color: #666666; /* Subtle gray for secondary text */
     text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    color: #343434;
-    margin-bottom: 0.8rem;
-    text-shadow: 1px 1px 1px rgba(54, 54, 54, 0.05);
-    background: linear-gradient(45deg, #303030 0%, #333 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center; /* Centers the text horizontally */
-    width: 100%; /* Ensures the element takes up full width */
+    margin-bottom: 1rem;
 }
 
 .add-to-cart {
-    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-    color: #f5f5f5; /* Off-white */
-    padding: 12px 25px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    border-radius: 99px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    background: #ff0000; /* Red button */
+    color: #ffffff; /* White text */
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    border: 2px solid #ff0000; /* Red border for consistency */
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .add-to-cart:hover {
-    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(179, 14, 14, 0.15);
-    border-color: red;
-
+    background: #ffffff; /* White hover */
+    color: #ff0000; /* Red text */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.2); /* Subtle red shadow */
+    border-color: #ff0000;
 }
-
 /* Reviews Section */
 .reviews {
-    padding: 3rem 2rem;
-    background: #1a1a1a;
+    padding: 4rem 2rem;
+    background: #000;
     text-align: center;
-    color: #f5f5f5;
+    border-top: 2px solid #333;
+    font-family: 'Inter', sans-serif;
+    animation: fadeInUp 0.6s ease-out both;
 }
 
+/* Section Heading */
 .reviews h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 8.1rem;
+    font-size: 3.5rem;
     text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    color: #ffffff;
-    margin-bottom: 0.8rem;
-    text-shadow: 1px 1px 1px rgba(54, 54, 54, 0.05);
-    background: linear-gradient(45deg, #ffffff 0%, #858585 100%);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: #fff;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #fff 0%, #ccc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-align: center; /* Centers the text horizontally */
-    width: 100%; /* Ensures the element takes up full width */
 }
 
+/* Reviews Container */
 .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
     gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Review Box */
 .review {
-    background: #2c2c2c;
+    background: #111;
     padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid #444;
+    border-radius: 8px;
+    color: #f5f5f5;
     text-align: left;
+    transition: all 0.3s ease;
+    width: 100%;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
     position: relative;
 }
 
 .review p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    color: #ffffff;
-    margin-bottom: 0.8rem;
-    text-shadow: 1px 1px 1px rgba(54, 54, 54, 0.05);
-    background: linear-gradient(45deg, #ffffff 0%, #ffffff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center; /* Centers the text horizontally */
-    width: 100%; /* Ensures the element takes up full width */
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #b3b3b3;
+    font-style: italic;
 }
 
-.reviewer-name {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    color: #ffffff;
-    margin-bottom: 0.8rem;
-    text-shadow: 1px 1px 1px rgba(54, 54, 54, 0.05);
-    background: linear-gradient(45deg, #ffffff 0%, #ffffff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center; /* Centers the text horizontally */
-    width: 100%; /* Ensures the element takes up full width */
+.review h4 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #ff0000;
+    text-transform: uppercase;
+    margin-top: 1rem;
 }
+
+/* Hover Effect */
+.review:hover {
+    transform: scale(1.05);
+    border-color: #ff0000;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .reviews-grid {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .reviews-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .review {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .review {
+        max-width: 90%;
+    }
+}
+
+/* Fade-In Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 /* Contact Section */
 .contact {
-    padding: 1rem 0.8rem;
-    background: #fafbfd;
+    padding: 3rem 1.5rem;
+    background: #000;
     text-align: center;
-    margin-top: 1.5rem;
-    border-top: 2px solid #eaeaea;
-    font-family: 'Inter', -apple-system, sans-serif;
- }
- 
- .contact h2 {
+    margin-top: 3rem;
+    border-top: 2px solid #333;
+    font-family: 'Inter', sans-serif;
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+/* Fade-In Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 4rem;
     text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    color: #1a1a1a;
-    margin-bottom: 0.8rem;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.05);
-    background: linear-gradient(45deg, #1a1a1a 0%, #333 100%);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: #fff;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #fff 0%, #ccc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
- }
- 
- .contact p {
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-    color: #4a4a4a;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    color: #b3b3b3;
     line-height: 1.6;
- }
- 
- .contact form {
-    max-width: 350px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact form {
+    max-width: 400px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
- }
- 
- .contact input,
- .contact textarea {
+    gap: 1rem;
+}
+
+.contact input,
+.contact textarea {
     width: 100%;
-    padding: 0.6rem 0.8rem;
-    border: 1.5px solid #e1e1e1;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    background: #ffffff;
+    padding: 0.8rem 1rem;
+    border: 2px solid #444;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #111;
+    color: #fff;
     transition: all 0.2s ease;
-    font-family: inherit;
- }
- 
- .contact textarea {
+    font-family: 'Inter', sans-serif;
+}
+
+.contact textarea {
     resize: none;
-    min-height: 100px;
- }
- 
- .contact input:focus,
- .contact textarea:focus {
+    min-height: 120px;
+}
+
+.contact input:focus,
+.contact textarea:focus {
     outline: none;
-    border-color: #000;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
- }
- 
- .contact-btn {
-    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    border-color: #ff0000;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+}
+
+/* Submit Button */
+.contact-btn {
+    background: #ff0000;
     color: #fff;
     border: none;
-    padding: 0.7rem 2rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 0.03em;
+    padding: 0.9rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     border-radius: 99px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: inherit;
- }
- 
- .contact-btn:hover {
-    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
- }
- 
- .contact-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
- }
- 
- ::placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-btn:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+}
+
+.contact-btn:active {
+    transform: scale(1);
+    box-shadow: 0 2px 6px rgba(255, 0, 0, 0.3);
+}
+
+
+::placeholder {
     color: #999;
     font-size: 0.85rem;
- }
-
-
-
-.form-group {
-    margin-bottom: 1.5rem;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    border: none;
-    border-radius: 5px;
-    background: #1a1a1a;
-    color: #fff;
-    font-size: 1rem;
-    outline: none;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #777;
-}
-
-button[type="submit"] {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.2rem;
-    color: #fff;
-    background: #000000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background: #252525;
-}
-
-
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-form input,
-form textarea {
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-form button {
-    background: #f4a261;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 30px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-form button:hover {
-    background: #181818;
-    transform: scale(1.05);
-}
-/* Footer */
 /* Footer */
 footer {
     padding: 2rem;
@@ -620,17 +685,8 @@ footer {
     color: #ffffff;
     font-size: 0.9rem;
 }
-/* General styles for the navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #1a1a1a;
-    padding: 10px 20px;
-    color: white;
-}
 
-/* Hamburger menu icon */
+/* Hamburger Menu Icon */
 .toggle {
     display: none;
     font-size: 24px;
@@ -638,7 +694,6 @@ footer {
     cursor: pointer;
 }
 
-/* Navigation links */
 .nav-links {
     display: flex;
     list-style: none;
@@ -668,73 +723,6 @@ footer {
     font-weight: bold;
     font-size: 16px;
 }
-/* Product Section */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider minimum width for larger cards */
-    gap: 20px;
-    padding: 20px;
-    max-width: 1400px; /* Increased max-width for wider layout */
-    margin: 20px auto; /* Added top/bottom margin for spacing */
-    box-sizing: border-box;
-    width: 95%; /* Occupy almost full width with some margin */
-}
-
-/* Responsive Design for Smaller Screens */
-
-.product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px; /* Slightly reduced gap on smaller screens */
-        padding: 15px;
-        width: 98%; /* Even wider on smaller screens */
-        margin: 10px auto; /* Reduced margins on small screens */
-    }
-
-
-.best-sellers-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    color: #1a1a1a;
-    margin-bottom: 2rem; /* Increased margin for better spacing */
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
-    background: linear-gradient(45deg, #1a1a1a 0%, #333 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-    width: 100%;
-}
-
-.product-card {
-    padding: 20px; /* Reduced padding */
-    border: 2px solid #333333; /* Thicker, solid border */
-    border-radius: 0; /* Removed border-radius for square corners */
-    background-color: #111111;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly softer shadow */
-    transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
-    overflow: hidden; /* Ensure content doesn't overflow */
-}
-
-.product-card:hover {
-    transform: scale(1.05); /* Reduced scale on hover */
-    border-color: red;
-}
-
-.product-card img {
-    width: 100%;
-    height: 300px; /* Fixed height for consistent image sizes */
-    object-fit: cover;
-    margin-bottom: 10px;
-    display: block; /* Prevents image from adding extra space */
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-    border-color: red;
-
-}
 
 /* Style for the Add to Cart button */
 .add-to-cart {
@@ -761,537 +749,7 @@ footer {
     border-color: #000;  /* Black border */
 }
 
-/* Ensure the button is aligned consistently */
-.product-card .add-to-cart {
-    display: block;
-    width: 100%; /* Ensures it spans the full width of the product card */
-}
-/* Style for the Shop Now button */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: black;  /* Black background like the Uber logo */
-    color: white;  /* White text */
-    font-size: 18px;
-    font-weight: 700;
-    border: 2px solid black;  /* Border to give it a more structured look */
-    border-radius: 30px;  /* Rounded corners for smooth edges */
-    text-align: center;
-    text-transform: uppercase;  /* Uppercase text for consistency */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* On hover, change the background color to white with black text */
-.btn:hover {
-    background-color: white;
-    color: black;
-    transform: translateY(-3px);  /* Slight lift effect on hover */
-}
-/* Style for the 'Why Choose RapCased?' section with dark gray gradient */
-#features {
-    background: linear-gradient(135deg, #2c2c2c, #1a1a1a);  /* Dark gray subtle gradient */
-    padding: 50px 0;  /* Add some padding for spacing */
-}
-
-/* Style for the features section text */
-#features h2 {
-    text-align: center;
-    font-size: 32px;
-
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    color: #1a1a1a;
-    margin-bottom: 0.8rem;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
-    background: linear-gradient(45deg, #1a1a1a 0%, #333 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center; /* Centers the text horizontally */
-    width: 100%; /* Ensures the element takes up full width */
-}
-
-/* Style for the features grid */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensures consistent centering */
-    gap: 2rem;
-    max-width: 1200px; /* Restrict width for better centering */
-    margin: 0 auto; /* Centers the grid */
-    padding: 0 1rem; /* Add slight padding to avoid touching edges */
-}
-
-.feature {
-    background: #2c2c2c;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #f5f5f5;
-}
-
-
-.feature h3 {
-    font-size: 24px;
-
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    color: #1a1a1a;
-    margin-bottom: 0.8rem;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
-    background: linear-gradient(45deg, #ffffff 0%, #ffffff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center; /* Centers the text horizontally */
-    width: 100%; /* Ensures the element takes up full width */
-}
-
-.feature p {
-    font-size: 16px;
-
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    color: #1a1a1a;
-    margin-bottom: 0.8rem;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
-    background: linear-gradient(45deg, #ffffff 0%, #d0d0d0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center; /* Centers the text horizontally */
-    width: 100%; /* Ensures the element takes up full width */
-}
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    color: #333;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-/* Why Choose Section */
-.why-choose {
-    background-color: #ffffff;
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-.why-choose-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
-    gap: 2rem;
-}
-
-.item {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.item:hover {
-    transform: translateY(-5px);
-}
-
-.icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
-}
-
-.item h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.item p {
-    font-size: 1rem;
-    color: #666;
-}
-
-
-/* General body styles */
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    overflow-x: hidden;
-    transition: all 0.3s ease;
-    background-color: #f9f9f9;
-}
-
-/* Reset all padding and margins */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Navbar general styles */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #1a1a1a;
-    padding: 10px 20px;
-    color: white;
-}
-
-.toggle {
-    display: none;
-    font-size: 24px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-/* Hidden nav-links for mobile */
-.nav-links.show {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: #1a1a1a;
-    padding: 10px;
-    border-radius: 8px;
-    z-index: 10;
-}
-
-
-/* Ensure other sections scale down properly */
-.home {
-    background: url('images/home-bg.jpg') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
-    padding: 0 1rem;
-}
-
-.home-content h1 {
-    font-size: 2rem;  /* Smaller title */
-}
-
-.home-content p {
-    font-size: 1rem;  /* Smaller description */
-}
-
-.features {
-    padding: 4rem 2rem;  /* Reduced padding */
-}
-
-.features h2 {
-    font-size: 2rem;  /* Smaller heading */
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensures consistent centering */
-    gap: 2rem;
-    max-width: 1200px; /* Restrict width for better centering */
-    margin: 0 auto; /* Centers the grid */
-    padding: 0 1rem; /* Add slight padding to avoid touching edges */
-}
-
-.feature {
-    background: #2c2c2c;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #f5f5f5;
-}
-
-.feature {
-    padding: 1.5rem;  /* Reduced padding */
-    font-size: 1rem;  /* Smaller font */
-}
-
-.reviews h2 {
-    font-size: 2rem;  /* Smaller heading */
-}
-
-.contact form {
-    max-width: 100%;  /* Full width */
-    padding: 1.5rem;  /* Reduced padding */
-}
-
-form input,
-form textarea {
-    font-size: 0.9rem;  /* Smaller text input size */
-}
-
-/* Footer */
-footer {
-    padding: 2rem;
-    background: #1a1a1a;
-    text-align: center;
-    color: #ffffff;
-    font-size: 0.9rem;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.nav-links {
-    display: none;
-}
-.nav-links.show {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.nav-links {
-    display: none;
-}
-.nav-links.show {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1400px;
-    margin: 20px auto;
-    box-sizing: border-box;
-    width: 95%;
-    background-color: #f8f8f8; /* Light background for the grid */
-}
-
-..product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 30px;
-    max-width: 1800px;
-    margin: 20px auto;
-    box-sizing: border-box;
-    width: 100%;
-    background-color: #f8f8f8; /* Light background for the grid */
-}
-
-@media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2px;
-        padding: -100px;
-        width: 100%;
-        margin: 0px;
-    }
-}
-
-.best-sellers-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    color: #333; /* Darker text for contrast on light background */
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
-    background: linear-gradient(45deg, #333 0%, #555 100%); /* Slightly lighter gradient */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-    width: 100%;
-}
-
-.product-card {
-    padding: 20px;
-    border: 1px solid #ddd; /* Light gray border */
-    border-radius: 0;
-    background-color: #fff; /* White background for the cards */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lighter shadow */
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    overflow: hidden;
-}
-
-.product-card:hover {
-    transform: scale(1.03); /* Even more subtle hover effect */
-    border-color: #ff000d; /* Blue hover border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
-
-}
-
-.product-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    margin-bottom: 10px;
-    display: block;
-}
-.product-card:hover {
-    transform: scale(1.03); /* Even more subtle hover effect */
-    border-color: #ff0000; /* Blue hover border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
-
-}
-
-.product-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    margin-bottom: 10px;
-    display: block;
-}
-
-.product-card:hover {
-    transform: scale(1.03); /* Even more subtle hover effect */
-    border-color: #ff0000; /* Blue hover border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
-
-}
-
-.product-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    margin-bottom: 10px;
-    display: block;
-}
-    
-header, footer {
-   /* Footer */
-  .footer {
-    padding: 2rem;
-    background: #1a1a1a;
-    text-align: center;
-    color: #ffffff;
-    font-size: 0.9rem;
-}
-  }
-  .section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-    gap: 20px;
-    margin-bottom: 40px;  /* Add spacing between sections */
-  }
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;   /* Aligns content vertically */
-    align-items: center;       /* Aligns content horizontally */
-    text-align: center;
-    padding: 15px;
-  }
-  .card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;  /* Makes sure the image covers the area without distortion */
-    margin-bottom: 15px;
-  }
-
-  /* Avoid setting fixed width unless necessary */
-.card img {
-    width: 100%;  /* This makes the image responsive */
-    height: auto;  /* Avoid fixed height */
-  }
-  .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  /* Center text in sections */
-.section h2, .section p {
-    text-align: center;
-  }
-  
-  /* Padding and margin adjustments */
-  .section, .card {
-    padding: 20px;
-    margin: 20px 0;
-  }
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-  }
-  
-  p {
-    margin-bottom: 15px;
-  }
-  /* Default styles for larger screens */
-body {
-    font-size: 16px;
-  }
-  
-  /* For screens smaller than 768px (tablets and phones) */
-  @media (max-width: 768px) {
-    body {
-      font-size: 14px;
-    }
-  
-    .container {
-      padding: 10px;
-    }
-  }
-  
-  /* For screens smaller than 480px (phones) */
-  @media (max-width: 480px) {
-    body {
-      font-size: 12px;
-    }
-  
-    .container {
-      flex-direction: column;
-    }
-  }
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .item {
-    flex: 1 1 45%; /* Shrinks and grows with screen size */
-    margin: 10px;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Style for scroll to top button */
+/* Style for the Scroll to Top button */
 #scrollToTopBtn {
     position: fixed;
     bottom: 20px;
@@ -1311,8 +769,49 @@ body {
     cursor: pointer;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
-  
+
 #scrollToTopBtn:hover {
     border: 2px solid red;
     transform: scale(1.2);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px; /* Slightly reduced gap on smaller screens */
+        padding: 15px;
+        width: 98%; /* Even wider on smaller screens */
+        margin: 10px auto; /* Reduced margins on small screens */
+    }
+    
+    .home-content h1 {
+        font-size: 2rem;  /* Smaller title */
+    }
+
+    .home-content p {
+        font-size: 1rem;  /* Smaller description */
+    }
+
+    .features {
+        padding: 4rem 2rem;  /* Reduced padding */
+    }
+
+    .features h2 {
+        font-size: 2rem;  /* Smaller heading */
+    }
+
+    .reviews h2 {
+        font-size: 2rem;  /* Smaller heading */
+    }
+
+    .contact form {
+        max-width: 100%;  /* Full width */
+        padding: 1.5rem;  /* Reduced padding */
+    }
+
+    form input,
+    form textarea {
+        font-size: 0.9rem;  /* Smaller text input size */
+    }
 }

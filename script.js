@@ -104,3 +104,19 @@ const navLinks = document.querySelector('.nav-links');
 toggleBtn.addEventListener('click', () => {
     navLinks.classList.toggle('toggle');
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const contactSection = document.querySelector(".contact");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    contactSection.classList.add("show");
+                }
+            });
+        },
+        { threshold: 0.2 }
+    );
+
+    observer.observe(contactSection);
+});

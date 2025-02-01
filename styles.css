@@ -360,7 +360,7 @@ nav a:active {
 }
 
 
-/* Product Section */
+//* Product Section */
 .best-sellers-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 3.5rem;
@@ -376,54 +376,43 @@ nav a:active {
 }
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Default: 3 cards per row */
-    gap: 2rem;
-    padding: 2rem 5%; /* Take full width with side padding */
-    margin: 0 auto;
-    box-sizing: border-box;
-    width: 100%;
+    grid-template-columns: repeat(3, 1fr); /* Ensures two columns */
+    gap: 1.5rem;
+    padding: 2rem 5%;
+    max-width: 2500px;
+    margin: auto;
 }
 
-@media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 2fr); /* 2 cards per row on smaller screens */
-    }
+.product-card {
+    background: white;
+    padding: 1.5rem;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.3s;
 }
 
 .product-card:hover {
     transform: scale(1.05);
-    border-color: #ff0000; /* Red border on hover */
+    border-color: red;
 }
 
-.product-card {
-    background: #ffffff; /* White card */
-    padding: 1.5rem;
-    border: 2px solid #dddddd; /* Subtle gray border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
 .product-card img {
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
     margin-bottom: 1rem;
-    border-radius: 0; /* Square edges */
+    border-radius: 0;
 }
-
 
 .product-card h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #333333; /* Dark text */
-    margin-bottom: 0.8rem;
-    text-transform: uppercase;
+    color: #333333;
 }
+
 
 .product-card p {
     font-family: 'Montserrat', sans-serif;
@@ -452,6 +441,43 @@ nav a:active {
     box-shadow: 0 6px 12px rgba(255, 0, 0, 0.2); /* Subtle red shadow */
     border-color: #ff0000;
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .best-sellers-title {
+        font-size: 2.5rem;
+    }
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .add-to-cart {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .best-sellers-title {
+        font-size: 2rem;
+    }
+    .product-grid {
+        grid-template-columns: repeat(3 1fr);
+        padding: 2rem 3%;
+    }
+    .product-card {
+        padding: 1rem;
+    }
+    .add-to-cart {
+        padding: 10px 20px;
+    }
+}
+@media (min-width: 481px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
 /* Reviews Section */
 .reviews {
     padding: 4rem 2rem;
@@ -775,43 +801,3 @@ footer {
     transform: scale(1.2);
 }
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px; /* Slightly reduced gap on smaller screens */
-        padding: 15px;
-        width: 98%; /* Even wider on smaller screens */
-        margin: 10px auto; /* Reduced margins on small screens */
-    }
-    
-    .home-content h1 {
-        font-size: 2rem;  /* Smaller title */
-    }
-
-    .home-content p {
-        font-size: 1rem;  /* Smaller description */
-    }
-
-    .features {
-        padding: 4rem 2rem;  /* Reduced padding */
-    }
-
-    .features h2 {
-        font-size: 2rem;  /* Smaller heading */
-    }
-
-    .reviews h2 {
-        font-size: 2rem;  /* Smaller heading */
-    }
-
-    .contact form {
-        max-width: 100%;  /* Full width */
-        padding: 1.5rem;  /* Reduced padding */
-    }
-
-    form input,
-    form textarea {
-        font-size: 0.9rem;  /* Smaller text input size */
-    }
-}

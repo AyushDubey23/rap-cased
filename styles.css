@@ -445,7 +445,17 @@ nav a:active {
 /* Responsive Design */
 @media (max-width: 1024px) {
     .best-sellers-title {
-        font-size: 2.5rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        color: #ff0000; /* Red text for emphasis */
+        margin-bottom: 2rem;
+        text-align: center;
+        border-bottom: 3px solid #333333; /* Black underline for a bold look */
+        padding-bottom: 0.5rem;
+        width: 100%;
     }
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -458,7 +468,17 @@ nav a:active {
 
 @media (max-width: 768px) {
     .best-sellers-title {
-        font-size: 2rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        color: #ff0000; /* Red text for emphasis */
+        margin-bottom: 2rem;
+        text-align: center;
+        border-bottom: 3px solid #333333; /* Black underline for a bold look */
+        padding-bottom: 0.5rem;
+        width: 100%;
     }
     .product-grid {
         grid-template-columns: repeat(3 1fr);
@@ -472,6 +492,19 @@ nav a:active {
     }
 }
 @media (min-width: 481px) {
+    .best-sellers-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        color: #ff0000; /* Red text for emphasis */
+        margin-bottom: 2rem;
+        text-align: center;
+        border-bottom: 3px solid #333333; /* Black underline for a bold look */
+        padding-bottom: 0.5rem;
+        width: 100%;
+    }
     .product-grid {
         grid-template-columns: repeat(3, 1fr);
     }

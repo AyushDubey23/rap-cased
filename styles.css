@@ -212,16 +212,34 @@ nav a:active {
 
 /* Home section styles */
 .home {
-    background: url('images/home-bg.jpg') no-repeat center center/cover;
+    position: relative;
     height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #f5f5f5; /* Off-white */
+    color: #f5f5f5;
     text-align: center;
     padding: 0 1rem;
-}
-
+  }
+  
+  #bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    z-index: -1;
+    background: black; 
+  }
+  
+  
+  .home .content {
+    position: relative;
+    z-index: 1;
+  }
+  
 .home-content h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
@@ -360,7 +378,7 @@ nav a:active {
 }
 
 
-//* Product Section */
+/* Product Section */
 .best-sellers-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 3.5rem;
